@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <title>CALCULADORA</title>
+        
+        <style type="text/css">
+
+            @font-face {
+                font-family: Calculator;
+                src: url(Calculator.ttf);
+            }
+
+            body{
+                background-image: url(img/fundo.jpg) ;
+                object-fit: contain;
+                position: relative;
+                background-attachment: fixed;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: 100%;
+                padding: 0px;
+                margin: 0px;
+            }
+
+        
+
+            .tit{
+                position: relative;
+                height: 215px;
+                background-image: url(img/1.jpg) ;
+                background-size: cover;
+                background-position: 30% 45%;
+                padding: 30px;
+                overflow: hidden;
+                margin: 0px;
+                border-radius: 30px 30px 0px 0px;
+            }
+
+            form{
+                background-color: white;
+                border-radius: 30px;
+                border: solid 2px  #30485ebd;
+                box-shadow: 10px 10px 5px #30485ebd;
+            }
+
+            .erro {
+                font-size: 0.9em;
+                color: rgb(130, 199, 255);
+            }
+
+            .form-group{
+                border-radius: 20px; 
+            }
+
+            .titulo{
+                font-family: Century Gothic;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: rgb(69, 71, 73);
+                
+            }
+
+            input{
+                border-color:#8a8a8a !important;
+                width: 30px;
+            }
+
+            hr{
+                color: rgb(4, 93, 177);
+                height: 3px !important;
+            }
+
+            .titulo2{
+                font-family: Century Gothic;
+                color: rgb(255, 145, 222);
+                text-transform: uppercase;
+                font-weight: 500;
+                
+            }
+
+            .btn-azul{
+                background-color: #82b8ee;
+                border: solid 2px #6491be !important;
+                color: #ffffffe1;
+                font-weight: 600;
+                border-radius: 50%;  
+                width: 100%;  
+                padding: 5px;
+                font-size: 1.4em;
+            }
+
+            .btn-azul:hover{
+                background-color: #6491be !important;
+            }
+
+            .btn-validar{
+                background-color: white;
+                border: solid 2px rgba(102, 102, 156, 0.589) !important;
+                color: #30485ee1;
+                font-weight: 600;
+                border-radius: 50%; 
+                width: 100%; 
+                padding: 5px; 
+                font-size: 1.4em;
+
+            }
+
+            .btn-validar:hover{
+                color: #283c4ee1 !important;
+                background-color: #d8e6f0 !important;
+            }
+
+            .form-control:focus {
+                border-color: rgb(130, 199, 255);
+                box-shadow: inset 0 1px 1px rgba(70, 183, 235, 0.075), 0 0 8px rgba(111, 73, 247, 0.6);
+            }
+
+            input:focus { 
+                outline: none !important;
+                border-color: none !important;
+                box-shadow: none !important;
+            }
+
+            .btn-primary:focus{
+                background-color:#9BCDFE;
+                border-color:rgb(10, 132, 233);
+            }
+
+            .txt_result{
+                color: white;
+                font-weight: 600;
+                font-size: 1.2em;
+            }
+
+            .espaco{
+                padding: 0px 30px;
+            }
+                        
+            .margem{
+                margin: 5px !important;
+            }
+
+            .fim{
+                clear: both;
+                color: #264057bb;
+                text-align: center;
+                font-size: 1.0em;
+                font-weight: 600;
+            }
+
+            .conta {
+                font-size: 1.1em;
+                color: #fff;
+                font-weight: 500;
+                margin-top: -10px;
+                text-align: right;
+                font-family: Calculator;
+                
+            }
+
+            .mostra{
+                position: relative;
+                margin-top: -138px;
+                color: white;
+                background-color: #64635E;
+                height: 100px;
+                padding-right: 40px;
+                text-align: right;
+                border-radius: 5px;
+                padding-top:20px ;
+            }
+            
+            .result{
+                margin-top: -12px;
+                font-size: 3.0em;
+                font-family: Calculator;
+            }
+
+            /* RESPONSIVIDADE */
+
+            @media (min-width:0px) and (max-width:700px){
+                body{
+                    background-image: url(img/fundo.jpg) ;
+                    object-fit: contain;
+                    position: relative;
+                    background-attachment: fixed;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: 50%;
+                    padding: 0px;
+                }
+
+                .container{
+                    padding: 50px 20px 0px 20px !important;
+                }
+
+                .row{
+                    padding: 2px 10px !important;
+                }
+
+                .margem{
+                    margin: 10px !important;
+                }
+                
+                .btn-validar{
+                    background-color: white;
+                    border: solid 2px rgba(102, 102, 156, 0.589) !important;
+                    color: #30485ee1;
+                    font-weight: 600;
+                    border-radius: 80px; 
+                    width: 100%; 
+                    padding: 5px; 
+                    font-size: 1.4em;
+                }
+
+                .btn-azul{
+                    background-color: #82b8ee;
+                    border: solid 2px #6491be !important;
+                    color: #ffffffe1;
+                    font-weight: 600;
+                    border-radius: 80px !important;  
+                    width: 100%;  
+                    padding: 5px;
+                    font-size: 1.4em;
+                }
+            }
+
+        </style>
+    </head>
+
+    <body>
+    <div class="container">
+            
+        <div class="row justify-content-center espaco">
+
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xs-4">
+            <form class="form mt-4 mb-4" name="formSignUp">
+
+                <div class="row tit">
+                    <span class="txt_result">Resultado:</span>
+                </div>
+
+                <div class="row form-group margem">
+                    <div class=" col-sm-12 col-md-12 mt-1">
+                        <div class="mostra">
+                            <div id="conta" class="conta"></div>
+                            <div id="resultado" class="result"></div>  
+                        </div>              
+                    </div>
+				</div>
+
+                <div class="row mb-3 mt-3 espaco">
+                    <div class="col-3 col-sm-3 col-md-3 numeros">
+                        <button class="btn btn-primary btn-azul text-center" type="button" onclick="limpar_valores()">
+							AC
+						</button>
+                    </div>
+
+                    <div class="col-3 col-sm-3 col-md-3 numeros">
+                        <button class="btn btn-primary btn-azul text-center" type="button" onclick="apagar_um()">
+							CE
+						</button>
+                    </div>
+
+                    <div class="col-3 col-sm-3 col-md-3 numeros">
+                        <button class="btn btn-primary btn-azul text-center" type="button" onclick="porcentagem()" value="%">
+							%
+						</button>
+                    </div>
+
+                    <div class="  col-3 col-sm-3 col-md-3 numeros">
+                        <button class="btn btn-primary btn-azul text-center" type="button" onclick="verificar('/')" value="%">
+							/
+						</button>
+                    </div>
+
+                </div>
+
+                <div class="row mb-3 mt-1 espaco">
+
+                    <div class="  col-3 col-sm-3 col-md-3 numeros">
+                        <button class="btn btn-primary btn-validar text-center" type="button" onclick="verificar('7')" value="7">
+							7
+						</button>
+                    </div>
+
+                    <div class="  col-3 col-sm-3 col-md-3 numeros">
+                        <button class="btn btn-primary btn-validar text-center" type="button" onclick="verificar('8')" value="8">
+							8
+						</button>
+                    </div>
+
+                    <div class="  col-3 col-sm-3 col-md-3 numeros">
+                        <button class="btn btn-primary btn-validar text-center" type="button" onclick="verificar('9')" value="9">
+							9
+						</button>
+                    </div>
+
+                    <div class="  col-3 col-sm-3 col-md-3 numeros">
+                        <button class="btn btn-primary btn-azul text-center" type="button" onclick="verificar('*')" value="*">
+							x
+						</button>
+                    </div>
+
+                </div>
+
+                <div class="row mb-3 mt-1 espaco">
+
+                    <div class="  col-3 col-sm-3 col-md-3 numeros">
+                        <button class="btn btn-primary btn-validar text-center" type="button" onclick="verificar('4')">
+							4
+						</button>
+                    </div>
+
+                    <div class="  col-3 col-sm-3 col-md-3 numeros">
+                        <button class="btn btn-primary btn-validar text-center" type="button" onclick="verificar('5')">
+							5
+						</button>
+                    </div>
+
+                    <div class="  col-3 col-sm-3 col-md-3 numeros">
+                        <button class="btn btn-primary btn-validar text-center" type="button" onclick="verificar('6')">
+							6
+						</button>
+                    </div>
+
+                    <div class="  col-3 col-sm-3 col-md-3 numeros">
+                        <button class="btn btn-primary btn-azul text-center" type="button" onclick="verificar('-')">
+							-
+						</button>
+                    </div>
+
+                </div>
+                
+
+               <div class="row mb-3 mt-1 espaco">
+
+                    <div class="  col-3 col-sm-3 col-md-3 mb-2">
+                        <button class="btn btn-primary btn-validar text-center"type="button" onclick="verificar('1')">
+							1
+						</button>
+                    </div>
+                
+                    <div class="  col-3 col-sm-3 col-md-3 mb-2">
+                        <button class="btn btn-primary btn-validar text-center" value="2" type="button" onclick="verificar('2')">
+							2
+						</button>
+                    </div>
+
+					<div class="  col-3 col-sm-3 col-md-3 mb-2">
+                        <button class="btn btn-primary btn-validar text-center" value="3" type="button" onclick="verificar('3')">
+                            3
+						</button>
+                    </div>
+
+					<div class="  col-3 col-sm-3 col-md-3 mb-2">
+                        <button class="btn btn-primary btn-azul text-center" value="+" type="button" onclick="verificar('+')">
+							+
+						</button>
+                    </div>
+
+                </div>
+
+                <div class="row mb-3 mt-1 espaco">
+
+                    <div class=" col-3 col-sm-3 col-md-3 mb-2">
+                        <button class="btn btn-primary btn-validar text-center" value="0" type="button" onclick="verificar('0')">
+							0
+						</button>
+                    </div>
+                
+                    <div class="  col-3 col-sm-3 col-md-3 mb-2">
+                        <button class="btn btn-primary btn-validar text-center" value="." type="button" onclick="verificar('.')">
+							•
+						</button>
+                    </div>
+
+                    <div class="  col-3 col-sm-3 col-md-3 mb-2">
+                        <button class="btn btn-primary btn-azul text-center" type="button" onclick="trocar_sinal()" id="troca">
+                            +/-
+						</button>
+                    </div>
+
+					<div class="  col-3 col-sm-3 col-md-3">
+                        <button class="btn btn-primary btn-azul text-center" type="button" onclick="calcular()">
+                            =
+						</button>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div> 
+
+        <span class="fim">By Jhenifer Teixeira</span>
+        
+    </div>
+</div>
+
+        <script type="text/javascript" src="js/validar.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+
+    </body>
+</html>
